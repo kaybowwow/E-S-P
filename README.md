@@ -26,4 +26,4 @@ Throws NoSuchElementException if the Deque is empty.
 Returns String containing each node, separated by spaces
 
 ### Doubly Linked Node as underlying container
-We chose doubly linked nodes as the underlying container for the Deque class because none of our methods require traversing. Additonally, all of our methods have a runtime of O(1), except toString(), making this DLLDeque more efficient than ALDeque and ArrayDeque, which would require O(n) methods to add or remove elements to the Deque. 
+We chose doubly linked nodes as the underlying container for the Deque class because DLLNodes allow for the most efficient implementation. None of our methods require traversing, and all of our methods have a runtime of O(1), except for toString(). This makes this DLLDeque more efficient than ALDeque and ArrayDeque, which would require O(n) methods to add or remove elements to the Deque. 
