@@ -21,7 +21,7 @@ public class DLLDeque<T> implements Deque<T> {
       precond: DLLDeque is created
       postcond: adds DLLNode to front of DLLDeque
       ---------------------------------------*/
-    public void addFirst(T value) {
+    public void addFirst(T value) {//O(1)
 	DLLNode<T> newNode = new DLLNode<T>(value , null , null); 
 	if (isEmpty()) {
 	    _first = newNode;
@@ -40,7 +40,7 @@ public class DLLDeque<T> implements Deque<T> {
       postcond: removes first element in DLLDeque
       if DLLDeque is empty, throw exception
       ---------------------------------------*/
-    public T removeFirst(){
+    public T removeFirst(){//O(1)
     	if (!isEmpty()){
 	    T ret = _first.getCargo();
 	    _first = _first.getNext();
@@ -58,7 +58,7 @@ public class DLLDeque<T> implements Deque<T> {
       postcond: Returns first element in DLLDeque
       if DLLDeque is empty, throw exception
       ---------------------------------------*/
-    public T getFirst(){
+    public T getFirst(){//O(1)
     	if (isEmpty()){
 	    throw new NoSuchElementException( "Deque is empty!" );
     	}
@@ -69,7 +69,7 @@ public class DLLDeque<T> implements Deque<T> {
       precond: DLLDeque is created
       postcond: adds DLLNode to end of DLLDeque
       ---------------------------------------*/
-    public void addLast(T value) {
+    public void addLast(T value) {//O(1)
 	DLLNode<T> newNode = new DLLNode<T>(value , null , null);
 	if (isEmpty()) {
 	    _first = newNode;
@@ -88,7 +88,7 @@ public class DLLDeque<T> implements Deque<T> {
       postcond: removes last element in DLLDeque
       if DLLDeque is empty, throw exception
       ---------------------------------------*/
-    public T removeLast(){
+    public T removeLast(){//O(1)
     	if (!isEmpty()){
 	    T ret = _last.getCargo();
 	    _last = _last.getPrev();
@@ -105,7 +105,7 @@ public class DLLDeque<T> implements Deque<T> {
       postcond: Returns Last element in DLLDeque
       if DLLDeque is empty, throw exception
       ---------------------------------------*/
-    public T getLast(){
+    public T getLast(){//O(1)
     	if (isEmpty()){
 	    throw new NoSuchElementException( "Deque is empty!" );
     	}
@@ -116,12 +116,12 @@ public class DLLDeque<T> implements Deque<T> {
     //--v------------H E L P E R-----M E T H O D S------------v--
 
     // Checks if DLLDeque is empty
-    public boolean isEmpty(){
+    public boolean isEmpty(){//O(1)
     	return _size == 0;
     }//end isEmpty()
 
     // print each node, separated by spaces
-    public String toString() { 
+    public String toString() {//O(n)
 	String foo = "";
 	DLLNode<T> tmp = _first;
 	int counter = _size;
