@@ -1,26 +1,29 @@
-# E-S-P
+# Team  E-S-P (period 1)
+Kevin Bao
+Jackie Woo
+Max Chan
 
 ### Method Selections
-#### isEmpty()
+#### boolean isEmpty() O(1)
 Helper method to check if the Deque is empty.
-#### addFirst(T value)
+#### void addFirst(T value) O(1)
 Adds a new DLLNode to the front of the Deque.
-#### removeFirst()
-Removes the first DLLNode of the Deque and returns the value of removed DLLNode.
+#### T removeFirst() O(1)
+Removes the first DLLNode of the Deque and returns the value of the removed DLLNode.
 Throws NoSuchElementException if the Deque is empty.
-#### getFirst()
-Returns the value of the first DLLNode.
+#### T getFirst() O(1)
+Returns the value of the first DLLNode in the Deque.
 Throws NoSuchElementException if the Deque is empty.
-#### addLast(T value)
+#### void addLast(T value) O(1)
 Adds a new DLLNode at the end of the Deque.
-#### removeLast()
-Removes the last DLLNode of the Deque and returns the value of teh removed DLLNode. 
+#### T removeLast() O(1)
+Removes the last DLLNode of the Deque and returns the value of the removed DLLNode. 
 Throws NoSuchElementException if the Deque is empty.
-#### getLast()
-Returns last element in Deque.
+#### T getLast() O(1)
+Returns the value of the last DLLNode in the Deque.
 Throws NoSuchElementException if the Deque is empty.
-#### toString()
-Allows Deque values to be printed out, separated by spaces
+#### String toString() O(n)
+Returns String containing each node, separated by spaces
 
 ### Doubly Linked Node as underlying container
-We chose a doubly lined node as the underlying container for the Deque class. Using DLLNodes, adding and removing nodes at the end and at the beginning of the Deque is simple. Additonally, all of our methods have a runtime of O(1), except the two string, making this DLLDeque more efficient than and ALDeque or ArrayDeque, which would use O(n) methods to add or remove elements to the list. 
+We chose doubly linked nodes as the underlying container for the Deque class because none of our methods require traversing. Additonally, all of our methods have a runtime of O(1), except toString(), making this DLLDeque more efficient than ALDeque and ArrayDeque, which would require O(n) methods to add or remove elements to the Deque. 
