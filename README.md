@@ -9,22 +9,34 @@ Max Chan
 <t>Helper method to check if the Deque is empty.
 #### void addFirst(T value) O(1)
 <t>Adds a new DLLNode to the front of the Deque.
+#### void offerFirst(T value) O(1)
+<t>Adds a new DLLNode to the front of the Deque.
 #### T removeFirst() O(1)
 <t>Removes the first DLLNode of the Deque and returns the value of the removed DLLNode.
 Throws NoSuchElementException if the Deque is empty.
+####T pollFirst() O(1)
+<t>REmoves the first DLLNode of the Deque and returns the value of the removed DLLNode. Returns null if the Deque is empty.
 #### T getFirst() O(1)
 <t>Returns the value of the first DLLNode in the Deque.
 Throws NoSuchElementException if the Deque is empty.
+####T peekFirst() O(1)
+<t> returns the value of the first DLLNode in the Deque. Returns null if Deque is empty
 #### void addLast(T value) O(1)
+<t>Adds a new DLLNode at the end of the Deque.
+####void offerLast(T value) O(1)
 <t>Adds a new DLLNode at the end of the Deque.
 #### T removeLast() O(1)
 <t>Removes the last DLLNode of the Deque and returns the value of the removed DLLNode. 
 Throws NoSuchElementException if the Deque is empty.
+####T pollLast() O(1)
+<t>Removes the last DLLNode of the Deque and returns the value of the removed DLLNode. Returns null if the Deque is empty.
 #### T getLast() O(1)
 <t>Returns the value of the last DLLNode in the Deque.
 Throws NoSuchElementException if the Deque is empty.
+####T peekLast() O(1)
+<t>Returns the value of the last DLLNode in the Deque. Returns null if the Deque is empty.
 #### String toString() O(n)
-<t>Returns String containing each node, separated by spaces
+<t>Returns String containing each node, separated by spaces.  Acts as iterator.
 
 ### Doubly Linked Node as underlying container
 We chose doubly linked nodes as the underlying container for the Deque class because DLLNodes allow for the most efficient implementation. None of our methods require traversing, and all of our methods have a runtime of O(1), except for toString(). This makes this DLLDeque more efficient than ALDeque and ArrayDeque, which would require O(n) methods to add or remove elements to the Deque from one end.
