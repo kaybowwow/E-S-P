@@ -112,6 +112,103 @@ public class DLLDeque<T> implements Deque<T> {
     	return _last.getCargo();
     }//end getLast()
 
+    /**=============================================================
+       ============================================================**/
+
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: adds DLLNode to front of DLLDeque
+      ---------------------------------------*/
+    public void offerFirst(T value) {//O(1)
+	DLLNode<T> newNode = new DLLNode<T>(value , null , null); 
+	if (isEmpty()) {
+	    _first = newNode;
+	    _last = newNode;
+	}
+	else {
+	    newNode.setNext(_first);
+	    _first.setPrev(newNode);
+	    _first = newNode;
+	}
+	_size++;
+    }//end offerFirst()
+
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: removes first element in DLLDeque
+      if DLLDeque is empty, return null
+      ---------------------------------------*/
+    public T pollFirst(){//O(1)
+    	if (!isEmpty()){
+	    T ret = _first.getCargo();
+	    _first = _first.getNext();
+	    _size--;
+	    return ret;
+    	}
+	else {
+	    return null;
+	}
+	
+    }//end pollFirst()
+
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: Returns first element in DLLDeque
+      if DLLDeque is empty, return null
+      ---------------------------------------*/
+    public T peekFirst(){//O(1)
+    	if (isEmpty()){
+	    return null;
+    	}
+    	return _first.getCargo();
+    }//end peekFirst()
+
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: adds DLLNode to end of DLLDeque
+      ---------------------------------------*/
+    public void offerLast(T value) {//O(1)
+	DLLNode<T> newNode = new DLLNode<T>(value , null , null);
+	if (isEmpty()) {
+	    _first = newNode;
+	    _last = newNode;
+	}
+	else {
+	    newNode.setPrev(_last);
+	    _last.setNext(newNode);
+	    _last = newNode;
+	}
+	_size++;
+    }//end offerLast()
+
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: removes last element in DLLDeque
+      if DLLDeque is empty, return null
+      ---------------------------------------*/
+    public T pollLast(){//O(1)
+    	if (!isEmpty()){
+	    T ret = _last.getCargo();
+	    _last = _last.getPrev();
+	    _size--;
+	    return ret;
+    	}
+	else {
+	    return null;
+	}
+    }//end pollLast()
+
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: Returns Last element in DLLDeque
+      if DLLDeque is empty, return null
+      ---------------------------------------*/
+    public T peekLast(){//O(1)
+    	if (isEmpty()){
+	    return null;
+    	}
+    	return _last.getCargo();
+    }//end peekLast()
 
     //--v------------H E L P E R-----M E T H O D S------------v--
 
