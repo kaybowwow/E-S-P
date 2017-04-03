@@ -1,4 +1,8 @@
-// E-S-P
+// E-S-P: Kevin Bao, Jackie Woo, Max Chan
+// APCS2 pd1
+// LAB02 -- All Hands on Deque!
+// 2017-04-03
+
 
 import java.util.NoSuchElementException;
 
@@ -16,7 +20,22 @@ public class DLLDeque<T> implements Deque<T> {
 	_last = null;
 	_size = 0;
     }
-    
+
+    /*---------------------------------------
+      precond: DLLDeque is created 
+      postcond: returns true if value is in DLLDeque, false otherwise.
+      ---------------------------------------*/    
+    public boolean contains(T value) {//O(n)
+	DLLNode<T> tmp = _first;
+	int counter = _size;
+	while ( counter > 0 ) {
+	    if (tmp.getCargo().equals(value)) {return true;}
+	    tmp = tmp.getNext();
+	    counter --;
+	}
+	return false;
+    }//end contains()
+
     /*---------------------------------------
       precond: DLLDeque is created
       postcond: adds DLLNode to front of DLLDeque
@@ -212,12 +231,18 @@ public class DLLDeque<T> implements Deque<T> {
 
     //--v------------H E L P E R-----M E T H O D S------------v--
 
-    // Checks if DLLDeque is empty
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: Returns true if DLLDeque is empty, false otherwise
+      ---------------------------------------*/
     public boolean isEmpty(){//O(1)
     	return _size == 0;
     }//end isEmpty()
 
-    // print each node, separated by spaces
+    /*---------------------------------------
+      precond: DLLDeque is created
+      postcond: Returns String of DLLNodes in DLLDeque separated by spaces
+      ---------------------------------------*/
     public String toString() {//O(n)
 	String foo = "";
 	DLLNode<T> tmp = _first;
@@ -241,8 +266,9 @@ public class DLLDeque<T> implements Deque<T> {
 	deeznuts.addLast("cherry");
 	deeznuts.addLast("lychee");
 	System.out.println("DLLDeque: " + deeznuts);
-		
-		
+
+	System.out.println(deeznuts.contains("lychee"));
+	System.out.println(deeznuts.contains("apple"));		
 		
 	System.out.println("removed: " + deeznuts.removeLast()); // lychee
 	System.out.println("DLLDeque: " + deeznuts);
