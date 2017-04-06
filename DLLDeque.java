@@ -35,6 +35,20 @@ public class DLLDeque<T> implements Deque<T> {
 	}
 	return false;
     }//end contains()
+    
+    /*---------------------------------------
+      precond: DLLDeque is created 
+      postcond: returns element at specified index
+      ---------------------------------------*/  
+    public T atIndex(int i){
+		DLLNode<T> tmp = _first;
+		int counter = i;
+		while ( counter > 0 ) {
+			tmp = tmp.getNext();
+			counter --;
+		}
+		return tmp.getCargo();
+    }  
 
     /*---------------------------------------
       precond: DLLDeque is created
@@ -267,9 +281,12 @@ public class DLLDeque<T> implements Deque<T> {
 	deeznuts.addLast("lychee");
 	System.out.println("DLLDeque: " + deeznuts);
 
+	System.out.println(deeznuts.atIndex(3));
+	/*--------------------- test remove ------------------------	
 	System.out.println(deeznuts.contains("lychee"));
 	System.out.println(deeznuts.contains("apple"));		
-		
+	
+
 	System.out.println("removed: " + deeznuts.removeLast()); // lychee
 	System.out.println("DLLDeque: " + deeznuts);
 	System.out.println("removed: " + deeznuts.removeLast()); // cherry
@@ -280,7 +297,7 @@ public class DLLDeque<T> implements Deque<T> {
 	System.out.println("DLLDeque: " + deeznuts);
 	System.out.println("removed: " + deeznuts.removeLast()); // null
 	System.out.println("DLLDeque: " + deeznuts);
-	/*--------------------- test remove ------------------------
+	
 	  ----------------------------------------------------------*/
 
 	//test get
