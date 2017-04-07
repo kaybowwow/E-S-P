@@ -3,7 +3,7 @@ Kevin Bao,
 Jackie Woo,
 Max Chan
 
-#### Since a Deque is a double-ended Queue, we decided that the most crucial methods to implement were methods that functioned in the front and end of a linear collection called Deque. Thus, we implemented accessors and mutators that specifically function with the first and last elements of a Deque.
+#### Since a Deque is a double-ended Queue, we decided that the most crucial methods to implement were methods that functioned in the front and end of a linear collection called Deque. Thus, we implemented accessors and mutators that specifically function with the first and last elements of a Deque. In addition, it is important to check for an element's presence in the Deque, and the value of an element located at a certain index. Thus, we also implemented intra-Deque accessors (accessors that access elements not necessarily located at the first or last indices).  
 ### Method Selections
 #### boolean isEmpty() O(1)
 <t>Helper method to check if the Deque is empty.
