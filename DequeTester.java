@@ -7,53 +7,53 @@ public class DequeTester{
 
     public static void main (String[] args){
 
-	Deck mine = new Deck(10);
+	DLLDeque<Integer> mine = new DLLDeque<Integer>();
 
 	//since there are no elements in the AL, nothing can be removed; error exception will be thrown
-	mine.removeEnd();
-	System.out.println(mine);
+	//mine.removeLast();
+	//System.out.println(mine);
 
 	//since there are no elements in the AL, nothing can be removed; error exception will be thrown
-	mine.removeFront();
-	System.out.println(mine);
+	//mine.removeFirst();
+	//System.out.println(mine);
 
 	//handles error silently (\n)
-	mine.pollEnd();
+	mine.pollLast();
 	System.out.println(mine);
 
 	//at the end of these calls, 5 should be in the front
-	mine.addEnd(5);
-	mine.addEnd(6);
+	mine.addLast(5);
+	mine.addLast(6);
 	System.out.println(mine);
 
 	//at the end of these calls, 9 should be in the front
-	mine.addFront(9);
+	mine.addFirst(9);
 	System.out.println(mine);
 
 	//at the end of these calls, it should look the same because there are no 1's in the AL
-	mine.removeFirst(1);
+	mine.removeFirst();
 	System.out.println(mine);
 
 	//should print 9
-	System.out.println(mine.peekFront());
+	System.out.println(mine.peekFirst());
 
 	//should print 6
-	System.out.println(mine.peekEnd());
+	System.out.println(mine.peekLast());
 
 	//at the end of these calls, the 9 should be gone
-	mine.removeFront();
+	mine.removeFirst();
 	System.out.println(mine);
 
-	mine.addEnd(9);
-	mine.addEnd(9);
-	mine.addEnd(7);
-	mine.addEnd(9);
-	mine.addEnd(9);
-	mine.addEnd(9);
+	mine.addLast(9);
+	mine.addLast(9);
+	mine.addLast(7);
+	mine.addLast(9);
+	mine.addLast(9);
+	mine.addLast(9);
 	System.out.println(mine);
 
 	//at the end of these test calls, there should only be two 9s after the 7
-	mine.removeLast(9);
+	mine.removeLast();
 	System.out.println(mine);
 
 	//should return 7
@@ -63,7 +63,7 @@ public class DequeTester{
 	System.out.println(mine.contains(9));
 
 	//5 at front should be gone
-	mine.pollFront();
+	mine.pollFirst();
 	System.out.println(mine);
 
 	//should print 1

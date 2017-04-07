@@ -7,7 +7,7 @@ public class Driver{
 	DLLDeque<String> que = new DLLDeque<String>();
 	
 	System.out.println("\nsize");
-	//System.out.println(que.size());
+	System.out.println(que.size());
 
 	System.out.println("\nnow addFirst..."); 
 	que.addFirst("1");
@@ -30,11 +30,13 @@ public class Driver{
 	System.out.println(que.peekLast()); 
 	
 	System.out.println("\nsize");
-	//System.out.println(que.size());
+	System.out.println(que.size());
 
 	System.out.println("\nnow testing toString()..."); 
 	System.out.println( que ); //for testing toString()...
 
+	System.out.println("\nnow testing atIndex...");
+	System.out.println( que.atIndex(2) );
 
 	System.out.println("\nnow removing first..."); 
 	System.out.println( que.removeFirst() );
@@ -50,7 +52,7 @@ public class Driver{
 	System.out.println( que.removeLast() );
 	
 	System.out.println("\nsize");
-	//System.out.println(que.size());
+	System.out.println(que.size());
 
 	System.out.println("\nDequeuing from empty queue should yield error..."); 
 	System.out.println( que.removeFirst() );

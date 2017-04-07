@@ -5,7 +5,7 @@
 
 
 import java.util.NoSuchElementException;
-import java.util.IndexOutOfBoundsException; 
+import java.lang.IndexOutOfBoundsException; 
 
 public class DLLDeque<T> implements Deque<T> {
     
@@ -21,6 +21,14 @@ public class DLLDeque<T> implements Deque<T> {
 	_last = null;
 	_size = 0;
     }
+
+    /*---------------------------------------
+      precond: DLLDeque is created 
+      postcond: returns size of DLLDeque
+      ---------------------------------------*/    
+    public int size() {//O(1)
+	return _size;
+    }//end size()
 
     /*---------------------------------------
       precond: DLLDeque is created 
@@ -40,19 +48,20 @@ public class DLLDeque<T> implements Deque<T> {
     /*---------------------------------------
       precond: DLLDeque is created 
       postcond: returns element at specified index
+      if index is out of bounds, throw exception
       ---------------------------------------*/  
-    public T atIndex(int i){
-	if (i >= _size) {
+    public T atIndex(int i){//O(n)
+	if (i >= _size || i < 0) {
 	    throw new IndexOutOfBoundsException("index does not exist");
 	}
-		DLLNode<T> tmp = _first;
-		int counter = i;
-		while ( counter > 0 ) {
-			tmp = tmp.getNext();
-			counter --;
-		}
-		return tmp.getCargo();
-    }  
+	DLLNode<T> tmp = _first;
+	int counter = i;
+	while ( counter > 0 ) {
+	    tmp = tmp.getNext();
+	    counter --;
+	}
+	return tmp.getCargo();
+    }//end atIndex()  
 
     /*---------------------------------------
       precond: DLLDeque is created
@@ -287,20 +296,20 @@ public class DLLDeque<T> implements Deque<T> {
 
 	System.out.println(deeznuts.atIndex(3));
 	/*--------------------- test remove ------------------------	
-	System.out.println(deeznuts.contains("lychee"));
-	System.out.println(deeznuts.contains("apple"));		
+	  System.out.println(deeznuts.contains("lychee"));
+	  System.out.println(deeznuts.contains("apple"));		
 	
 
-	System.out.println("removed: " + deeznuts.removeLast()); // lychee
-	System.out.println("DLLDeque: " + deeznuts);
-	System.out.println("removed: " + deeznuts.removeLast()); // cherry
-	System.out.println("DLLDeque: " + deeznuts);
-	System.out.println("removed: " + deeznuts.removeLast()); // pear
-	System.out.println("DLLDeque: " + deeznuts);
-	System.out.println("removed: " + deeznuts.removeLast()); // banana
-	System.out.println("DLLDeque: " + deeznuts);
-	System.out.println("removed: " + deeznuts.removeLast()); // null
-	System.out.println("DLLDeque: " + deeznuts);
+	  System.out.println("removed: " + deeznuts.removeLast()); // lychee
+	  System.out.println("DLLDeque: " + deeznuts);
+	  System.out.println("removed: " + deeznuts.removeLast()); // cherry
+	  System.out.println("DLLDeque: " + deeznuts);
+	  System.out.println("removed: " + deeznuts.removeLast()); // pear
+	  System.out.println("DLLDeque: " + deeznuts);
+	  System.out.println("removed: " + deeznuts.removeLast()); // banana
+	  System.out.println("DLLDeque: " + deeznuts);
+	  System.out.println("removed: " + deeznuts.removeLast()); // null
+	  System.out.println("DLLDeque: " + deeznuts);
 	
 	  ----------------------------------------------------------*/
 

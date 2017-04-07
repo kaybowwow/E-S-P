@@ -38,9 +38,10 @@ Throws NoSuchElementException if the Deque is empty.
 #### String toString() O(n)
 <t>Returns String containing each node, separated by spaces.  Acts as iterator.
 #### boolean contains(T value)
-<t>Checks to see if given T value is in Deque
+<t>Checks to see if given T value is in Deque.
 #### T atIndex(int i)
-<t>Returns the value of the DLLNode at index i
+<t>Returns the value of the DLLNode at index i.
+Throws IndexOutOfBoundsException if i greater than size or less than 0.
 
 ### Doubly Linked Node as underlying container
 We chose doubly linked nodes as the underlying container for the Deque class because DLLNodes allow for the most efficient implementation. None of our methods require traversing, and all of our methods have a runtime of O(1), except for toString(). This makes this DLLDeque more efficient than ALDeque and ArrayDeque, which would require O(n) methods to add or remove elements to the Deque from one end.
