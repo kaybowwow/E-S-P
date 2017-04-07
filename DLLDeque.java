@@ -1,8 +1,10 @@
 // E-S-P: Kevin Bao, Jackie Woo, Max Chan
 // APCS2 pd1
 // LAB02 -- All Hands on Deque!
-// 2017-04-03
+// 2017-04-06
 
+/**THIS  BE  THE  IMPLEMENTATION  OF   DEQUE
+   USING  DOUBLY - LINKED  NODES**/
 
 import java.util.NoSuchElementException;
 import java.lang.IndexOutOfBoundsException; 

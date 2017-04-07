@@ -27,4 +27,6 @@ public interface Deque<T> {
     public T peekLast();//Returns last element without removing
 
     public boolean contains(T value);//Checks if given value is in Deque
+
+    public T atIndex(int i);//Returns value of DLLNode at index i. If i is invalid, throw exception.
 }
