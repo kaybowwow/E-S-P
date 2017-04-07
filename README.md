@@ -35,13 +35,13 @@ Throws NoSuchElementException if the Deque is empty.
 Throws NoSuchElementException if the Deque is empty.
 #### T peekLast() O(1)
 <t>Returns the value of the last DLLNode in the Deque. Returns null if the Deque is empty.
-#### String toString() O(n)
+#### String toString() O(n) 
 <t>Returns String containing each node, separated by spaces.  Acts as iterator.
-#### boolean contains(T value)
+#### boolean contains(T value) O(n)
 <t>Checks to see if given T value is in Deque.
-#### T atIndex(int i)
+#### T atIndex(int i) O(n)
 <t>Returns the value of the DLLNode at index i.
 Throws IndexOutOfBoundsException if i greater than size or less than 0.
 
 ### Doubly Linked Node as underlying container
-We chose doubly linked nodes as the underlying container for the Deque class because DLLNodes allow for the most efficient implementation. None of our methods require traversing, and all of our methods have a runtime of O(1), except for toString(). This makes this DLLDeque more efficient than ALDeque and ArrayDeque, which would require O(n) methods to add or remove elements to the Deque from one end.
+We chose doubly linked nodes as the underlying container for the Deque class because DLLNodes allow for the most efficient implementation. Only 3 of our methods require traversing, and all of our methods have a runtime of O(1), except for toString(), contains(T value), and atIndex(int i). This makes this DLLDeque more efficient than ALDeque and ArrayDeque, which would require O(n) methods to add or remove (offer or poll)  elements to the Deque from one end.
