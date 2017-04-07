@@ -5,6 +5,7 @@
 
 
 import java.util.NoSuchElementException;
+import java.util.IndexOutOfBoundsException; 
 
 public class DLLDeque<T> implements Deque<T> {
     
@@ -41,6 +42,9 @@ public class DLLDeque<T> implements Deque<T> {
       postcond: returns element at specified index
       ---------------------------------------*/  
     public T atIndex(int i){
+	if (i >= _size) {
+	    throw new IndexOutOfBoundsException("index does not exist");
+	}
 		DLLNode<T> tmp = _first;
 		int counter = i;
 		while ( counter > 0 ) {
